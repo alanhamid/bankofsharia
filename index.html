@@ -26,6 +26,49 @@
   </style>
 </head>
 <body class="flex flex-col min-h-screen">
+  # Preparing loader animation HTML + CSS
+
+loader_html_css = """
+<!-- Loader Animation -->
+<div id="loader" class="fixed inset-0 flex flex-col justify-center items-center bg-white z-50">
+  <img src="favicon_bos.png" alt="Bank of Sharia Logo" class="w-16 h-16 animate-spin-slow mb-4" />
+  <p class="text-green-700 font-bold text-lg animate-fade-in">Bank of Sharia</p>
+</div>
+
+<style>
+/* Loader Animations */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 2s linear infinite;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 2s ease-in forwards;
+}
+</style>
+
+<script>
+// Hide loader when page finishes loading
+window.addEventListener('load', function() {
+  const loader = document.getElementById('loader');
+  loader.style.display = 'none';
+});
+</script>
+"""
+
+# Save to file for easy integration
+with open("/mnt/data/loader_code.txt", "w") as f:
+    f.write(loader_html_css)
+
+"/mnt/data/loader_code.txt"
+
 
 <!-- Navbar -->
 <header class="bg-white shadow-md">
