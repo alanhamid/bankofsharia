@@ -1,35 +1,35 @@
-
 /* ====== Bank of Sharia - Landing.css ====== */
-/* Updated: April 2025 */
+/* Updated: August 2025 */
 
-/* Font Setup */
+/* Core Typography */
+/* Use Segoe UI as the primary typeface to mirror the BOS logo.  Fall back to Tajawal to support Arabic text if Segoe UI isn't available on the user's system. */
 body {
-    font-family: 'Tajawal', sans-serif;
-    background-color: #F9F5EE;
-    color: #5C5346;
+    font-family: 'Segoe UI', 'Tajawal', sans-serif;
+    background-color: #F8F8F8; /* light neutral background to let the red accents stand out */
+    color: #333333; /* dark grey text for high readability */
 }
 
 /* Headings */
+/* Headings inherit Segoe UI and use bold weights to match the logo's strong lettering. */
 h1, h2, h3 {
-    font-family: 'Scheherazade New', serif;
-    color: #01796F;
+    font-family: 'Segoe UI', sans-serif;
+    color: #EC1C24; /* BOS red for all headings to reinforce branding */
+    font-weight: 700;
+    margin-top: 0;
 }
 
 h1 {
     font-size: 3rem;
-    font-weight: bold;
     margin-bottom: 20px;
 }
 
 h2 {
     font-size: 2.5rem;
-    font-weight: 700;
     margin-bottom: 15px;
 }
 
 h3 {
     font-size: 2rem;
-    font-weight: 600;
     margin-bottom: 10px;
 }
 
@@ -37,31 +37,36 @@ h3 {
 p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #5C5346;
+    color: #333333;
 }
 
-/* Navbar Links */
+/* Navigation links */
 nav a {
+    font-family: 'Segoe UI', sans-serif;
     font-weight: 600;
-    transition: all 0.3s ease-in-out;
+    color: #333333;
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
 }
 
 nav a:hover {
-    color: #01796F;
+    color: #EC1C24;
 }
 
 /* Buttons */
 .btn {
-    background-color: #01796F;
-    color: white;
+    background-color: #EC1C24; /* primary BOS red */
+    color: #FFFFFF;
+    font-family: 'Segoe UI', sans-serif;
     font-weight: 600;
     padding: 12px 24px;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
+    display: inline-block;
 }
 
 .btn:hover {
-    background-color: #02594E;
+    background-color: #C71A22; /* darker shade for hover state */
 }
 
 /* Section Layouts */
@@ -84,20 +89,22 @@ img {
 
 /* Footer */
 footer {
-    background-color: #E3D0B2;
+    background-color: #2A2A2A; /* dark background to complement the red and improve contrast */
     padding: 30px 20px;
     font-size: 0.9rem;
+    color: #FFFFFF;
 }
 
 footer p, footer a {
-    color: #5C5346;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 footer a:hover {
-    color: #01796F;
+    color: #EC1C24;
 }
 
-/* CTA Buttons in Flexbox */
+/* Call to Action button group */
 .cta-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -106,7 +113,7 @@ footer a:hover {
     margin-top: 20px;
 }
 
-/* Responsive */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.2rem;
