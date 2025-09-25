@@ -1,214 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bank of Sharia - Virtual Assets Transfer and Settlement Services Provider </title>
-  <script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="landing.css" />
-  <link rel="stylesheet" href="landing.css" />
-<link rel="icon" type="image/png" href="favicon_bos.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bank of Sharia (BOS) — SAR Stablecoin Rail & GCC Digital Corridor</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+  <!-- SEO -->
+  <meta name="description" content="Bank of Sharia (BOS) is building the first Sharia-compliant SAR stablecoin rail, incorporated in ADGM with a regional HQ in Riyadh, to power instant, compliant payments across the GCC.">
+  <meta property="og:title" content="Bank of Sharia (BOS) — SAR Stablecoin Rail & GCC Digital Corridor" />
+  <meta property="og:description" content="Sharia-compliant SAR stablecoin rail. ADGM incorporation, Riyadh HQ. Wallet & card pilots, AED↔SAR cross-border corridor." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bankofsharia.org" />
+  <meta property="og:image" content="favicon_bos.png" />
+
+  <link rel="icon" type="image/png" href="favicon_bos.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
-    body {
-      font-family: 'Tajawal', sans-serif;
-      background-color: #FAF7F2;
-      color: #5C5346;
+    :root{
+      --bos-green:#01796F;
+      --bos-green-dark:#005f4b;
+      --bos-gold:#DAA520;
+      --bos-ink:#5C5346;
+      --bos-bg:#FAF7F2;
     }
-    h1, h2, h3 {
-      font-family: 'Scheherazade New', serif;
-      color: #01796F;
-    }
-    nav a {
-      font-weight: bold;
-    }
+    body{font-family:'Tajawal',sans-serif;background:var(--bos-bg);color:var(--bos-ink);}
+    h1,h2,h3{font-family:'Scheherazade New',serif;color:var(--bos-green);}
+    nav a{font-weight:700}
+    /* Loader */
+    @keyframes spin-slow{to{transform:rotate(360deg)}}
+    .animate-spin-slow{animation:spin-slow 2s linear infinite}
+    @keyframes fade-in{from{opacity:0}to{opacity:1}}
+    .animate-fade-in{animation:fade-in 1s ease-in forwards}
   </style>
 </head>
+
 <body class="flex flex-col min-h-screen">
-<!-- Loader Animation -->
-<div id="loader" class="fixed inset-0 flex flex-col justify-center items-center bg-white z-50">
-  <img src="favicon_bos.png" alt="Bank of Sharia Logo" class="w-16 h-16 animate-spin-slow mb-4" />
-  <p class="text-green-700 font-bold text-lg animate-fade-in">Bank of Sharia</p>
-</div>
-<style>
-/* Loader Animations */
-@keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.animate-spin-slow {
-  animation: spin-slow 2s linear infinite;
-}
-
-@keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-.animate-fade-in {
-  animation: fade-in 2s ease-in forwards;
-}
-</style>
-
-<script>
-// Hide loader when page finishes loading
-window.addEventListener('load', function() {
-  const loader = document.getElementById('loader');
-  loader.style.display = 'none';
-});
-</script>
-
-<!-- Navbar -->
-<header class="bg-white shadow-md">
-  <div class="container mx-auto flex justify-between items-center py-4 px-6">
-    <div class="text-xl font-bold text-green-700">Bank of Sharia -  بنك الشريعة </div>
-    <nav class="hidden md:flex space-x-6">
-      <a href="#home" class="hover:text-green-700">Home</a>
-      <a href="#individuals" class="hover:text-green-700">Personal</a>
-      <a href="#businesses" class="hover:text-green-700">Business</a>
-      <a href="#about" class="hover:text-green-700">About</a>
-      <a href="#contact" class="hover:text-green-700">Contact</a>
-      <a href="#" class="bg-yellow-500 text-white px-3 py-2 rounded hover:bg-yellow-600">Personal Login/SignUp</a>
-      <a href="#" class="bg-yellow-500 text-white px-3 py-2 rounded hover:bg-yellow-600">Business Login/SignUp</a>
-    </nav>
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 flex flex-col items-center justify-center bg-white z-50">
+    <img src="favicon_bos.png" alt="Bank of Sharia Logo" class="w-16 h-16 animate-spin-slow mb-4" />
+    <p class="text-green-700 font-bold text-lg animate-fade-in">Bank of Sharia</p>
   </div>
-</header>
+  <script>
+    window.addEventListener('load',()=>document.getElementById('loader').remove());
+  </script>
 
-<!-- Hero Section -->
-<section id="home" class="text-center py-20 px-6" style="background-color: #FAF7F2;">   
-    <h1 class=" text-center text-5xl text-[#01796F] mb-4"> 1,400+ Years in the Making - <br><span class="text-[#DAA520]">Combining Years of Tested Ethical Finance with DeFi </span></h1>
-<section text-center>
- <div class="container mx-auto flex flex-col md:flex-row items-center px-4 gap-10">
-      <div>
-          <img src="logo8.png" alt="BOS" class="rounded-lg shadow-lg mx-auto max-w-xs" />
-      </div>
-     <div>
-       <h1 class=" text-center text-5xl text-[#01796F] mb-4"> Virtual Assets Transfer & Settlement Services Provider  <span class="text-[#DAA520]"> - <br> Fully Sharia Compliant</span></h1>
+  <!-- Navbar -->
+  <header class="bg-white/90 backdrop-blur shadow-sm sticky top-0 z-40">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+      <a href="#home" class="text-xl font-bold text-[var(--bos-green)]" aria-label="Bank of Sharia home">
+        Bank of Sharia — بنك الشريعة
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#home" class="hover:text-[var(--bos-green)]">Home</a>
+        <a href="#businesses" class="hover:text-[var(--bos-green)]">Business</a>
+        <a href="#individuals" class="hover:text-[var(--bos-green)]">Personal</a>
+        <a href="#corridor" class="hover:text-[var(--bos-green)]">AED↔SAR Corridor</a>
+        <a href="#roadmap" class="hover:text-[var(--bos-green)]">Roadmap</a>
+        <a href="#about" class="hover:text-[var(--bos-green)]">About</a>
+        <a href="#contact" class="hover:text-[var(--bos-green)]">Contact</a>
+        <a href="#waitlist" class="bg-[var(--bos-gold)] text-white px-3 py-2 rounded hover:bg-yellow-600">Join Waitlist</a>
+      </nav>
     </div>
-       
- </div>   
- </section>
-</section>
+  </header>
 
-  <!-- Businesses Section -->
-
-<!-- Businesses Section -->
-<section id="businesses" class="py-16 px-6 text-left" style="background-color: #FAF7F2;">
-  <section class="text-center">
-    <div class="container mx-auto flex flex-col md:flex-row items-left px-4 gap-10">
-
-      <div class="md:w-1/2">
-        <img src="feature1.jpg" alt="DAO" class="rounded-lg shadow-lg mx-auto max-w-xs" />
-      </div>
-
-      <div class="md:w-1/2">
-       <h1 class=" text-left text-5xl text-[#01796F] mb-4">
-          For Businesses<br>
-          <span class="text-[#DAA520]">Reach Globally<br> Pay Instantly in Local Fiat or Cryptos</span>
+  <!-- Hero -->
+  <section id="home" class="py-16 md:py-24 px-6">
+    <div class="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl leading-tight mb-4">
+          Sharia-Compliant <span class="text-[var(--bos-gold)]">SAR Stablecoin Rail</span><br/>
+          Built for the GCC Digital Corridor
         </h1>
-
-        <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]">✅ Enhance relationships with your global customers, suppliers, and employees by paying them hassle-free in their local currencies.</p>
-
-        <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]">✅ Eliminate uncertainty and manage your cashflow more efficiently and effectively at a reduced cost.</p>
-
-        <p class="text-lg mb-4 font-semibold text-left text-[#005f4b]">✅ Fully Compliant & Secured Payment Solutions with built-in AML/KYC, transaction monitoring, and regulatory-grade custody.</p>
-
-        <p class="text-lg mb-4 font-semibold text-left text-[#005f4b]">✅ Use our virtual and physical pre-paid corporate cards to control and manage spendings.</p>
-
-
-        <!-- Call to Action Button -->
-        <div class="mt-8 text-left">
-          <a href="#contact" class="bg-[#01796F] hover:bg-[#005f4b] text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300"> Contact us to learn more ...  </a> </div>
-
+        <p class="text-lg text-[var(--bos-green-dark)] mb-6">
+          Incorporated in <b>ADGM (Abu Dhabi)</b> with a regional HQ in <b>Riyadh</b>, BOS enables instant, compliant payments—
+          connecting Saudi Arabia and the UAE via the <b>AED↔SAR</b> corridor.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#waitlist" class="bg-[var(--bos-green)] hover:bg-[var(--bos-green-dark)] text-white font-bold py-3 px-6 rounded-lg shadow">
+            Join Wallet & Card Waitlist
+          </a>
+          <a href="#contact" class="border border-[var(--bos-green)] text-[var(--bos-green)] hover:bg-[var(--bos-green)] hover:text-white font-bold py-3 px-6 rounded-lg">
+            Partner / Invest
+          </a>
+        </div>
+        <p class="text-xs mt-3 text-neutral-600">
+          *Product availability subject to regulatory approvals in relevant jurisdictions.
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <img src="logo8.png" alt="BOS emblem" class="rounded-lg shadow-lg w-72 md:w-80" />
       </div>
     </div>
   </section>
-</section>
-  
-<!-- Individuals Section -->
-<section id="individuals" class="text-center py-20 px-6"  style="background-color: #FAF7F2;">
-   <section text-center>
-   <div class="container mx-auto flex flex-col md:flex-row items-center px-4 gap-10">
-      <div class="md:w-1/2">
-       <h1 class=" text-left text-5xl text-[#01796F] mb-4">For Individuals
-          <br><span class="text-[#DAA520]">Fully Sharia Compliant BOS Cards</span></h1>
-                <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]">✅ Start with FREE Basic Subscription</p>
-                <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]">✅ Shop around the world where Visa or Mastercards are accpeted</p>
-                <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]">✅ Instant, secure, and compliant crypto and fiat transactions across the world</p>
-                <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]">✅ Earn 2% to 5% $SHARIA Coins</strong> back in rewards on all your spends</p>
-                <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]">✅ Whether you believe in after life or not, you could still earn rewards to help less-fortunate ones and  <stromg> Live a Purpose Driven Life Well</stromg> .... </p>
-          <!-- Call to Action Button -->
-          <div class="mt-8 text-left">
-            <a href="https://shariadebitcard.org" class="bg-[#01796F] hover:bg-[#005f4b] text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300"  target="_blank"> Learn more ... </a> 
-            </div>  
-      </div>
-       <div class="md:w-1/2">
-        <img src="poster7.png" alt="BOS" class="rounded-lg shadow-lg mx-auto max-w-xs" />
-      </div>
-   </div>
-   </section>
-</section>
 
-
-<!-- About Us Section -->
-<section id="about" class="py-16 px-6 text-center" style="background-color: #FAF7F2;">
-  <section class="text-center">
-    <div class="container mx-auto flex flex-col md:flex-row items-left px-4 gap-10">
-
-      <div class="md:w-1/2">
-        <img src="Feature1.jpg" alt="DAO" class="rounded-lg shadow-lg mx-auto max-w-xs" />
-      </div>
-
-      <div class="md:w-1/2">
-        <h1 class=" text-left text-5xl text-[#01796F] mb-4">About
-          <br><span class="text-[#DAA520]">BOS & Sharia Coin DAO</span></h1>
- 
-        <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]"> Sharia Coin DAO governs the Bank of Sharia. 100% decentralized, transparent, Sharia-compliant. $SHARIA tokens and $SCGT governance drive the future of ethical DeFi banking.</p>
-        <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]">Our vision is to create a fair and just monetary system for the whole world by integrating Islamic financial ethics (Sharia Compliance) with modern DeFi.</p>
-       <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]"> To implement our vision, we have introduced a new-class of stablecoins, our utility token called Sharia Coin: $SHARIA.</p>
-       <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]"> $SHARIA combined with traditional stablecoins enables us to build innovative payment solutions for enterprises and indivuals. 
-         <br> To see how we could help you get a competitive advantage in the new economy, get in touch with us ... </p>
-
-         <!-- Call to Action Button -->
-        <div class="mt-8 text-left">
-           <!-- Call to Action Button -->
-        <div class="mt-8 text-left">
-          <a href="#contact" class="bg-[#01796F] hover:bg-[#005f4b] text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300"> Contact us to learn more ...  </a> 
+  <!-- For Businesses -->
+  <section id="businesses" class="py-16 px-6">
+    <div class="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div class="order-2 md:order-1">
+        <h2 class="text-4xl mb-4">For Businesses</h2>
+        <h3 class="text-xl text-[var(--bos-gold)] mb-6">Reach globally. Settle instantly. Stay compliant.</h3>
+        <ul class="space-y-3 text-[var(--bos-green-dark)] font-semibold">
+          <li>✅ Pay suppliers, contractors, and employees in local currencies with transparent fees.</li>
+          <li>✅ Improve cash flow: programmable settlement and treasury tools.</li>
+          <li>✅ Built-in AML/KYC, transaction monitoring, and regulatory-grade custody.</li>
+          <li>✅ Virtual & physical corporate cards with spend controls and rich reporting.</li>
+        </ul>
+        <div class="mt-8">
+          <a href="#contact" class="bg-[var(--bos-green)] hover:bg-[var(--bos-green-dark)] text-white font-bold py-3 px-6 rounded-lg shadow">
+            Speak to Sales
+          </a>
         </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <img src="feature1.jpg" alt="Business payments" class="rounded-lg shadow-lg w-80 md:w-96 mx-auto" />
+      </div>
+    </div>
+  </section>
 
-      
-          <!-- Call to Action Button -->
-          <div class="mt-8 text-left">
-            <a href="https://shariadebitcard.org" class="bg-[#01796F] hover:bg-[#005f4b] text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300"  target="_blank"> Get Your BOS Card Today </a> 
-           </div>  
-          
+  <!-- For Individuals -->
+  <section id="individuals" class="py-16 px-6">
+    <div class="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <img src="poster7.png" alt="BOS Card & Wallet" class="rounded-lg shadow-lg w-80 md:w-96 mx-auto" />
+      </div>
+      <div>
+        <h2 class="text-4xl mb-4">For Individuals</h2>
+        <h3 class="text-xl text-[var(--bos-gold)] mb-6">Sharia-Compliant Wallet & Card</h3>
+        <ul class="space-y-3 text-[var(--bos-green-dark)] font-semibold">
+          <li>✅ Free basic plan at launch.</li>
+          <li>✅ Shop worldwide wherever major networks are accepted.</li>
+          <li>✅ Instant, secure transactions across fiat and compliant digital assets.</li>
+          <li>✅ Earn <b>2%–5% SHARIA</b> rewards on eligible spend.</li>
+          <li>✅ Purpose-driven: a portion of revenues supports long-term charitable causes.</li>
+        </ul>
+        <div class="mt-8">
+          <a href="#waitlist" class="bg-[var(--bos-green)] hover:bg-[var(--bos-green-dark)] text-white font-bold py-3 px-6 rounded-lg shadow">
+            Join Waitlist
+          </a>
         </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-16 px-6 text-center" style="background-color: #FAF7F2;">
-  <section class="text-center">
-    <div class="container mx-auto flex flex-col md:flex-row items-left px-4 gap-10">
-
-      <div class="md:w-1/2">
-        <img src="frontshirtprint2Small.png" alt="DAO" class="rounded-lg shadow-lg mx-auto max-w-xs" />
       </div>
-       
-      <div class="md:w-1/2">
-                <h1 class=" text-left text-5xl text-[#01796F] mb-4"> <span class="text-[#DAA520]"> Contact </span></h1>
-       <p class="font-semibold max-w-2xl mb-8 text-left text-[#005f4b]"> Have questions? Interested in partnering or investing, or opening an account? Reach out today.</p>
-    <a href="mailto:admin@bankofsharia.org" class="inline-block bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800">Email Us</a>
+    </div>
+  </section>
 
+  <!-- Corridor -->
+  <section id="corridor" class="py-16 px-6">
+    <div class="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-4xl mb-4">AED↔SAR Digital Corridor</h2>
+        <p class="text-[var(--bos-green-dark)] font-semibold mb-4">
+          BOS connects Saudi and UAE payment rails for instant, low-cost, programmable settlement—supporting trade, remittances, and government services.
+        </p>
+        <ul class="list-disc pl-5 text-[var(--bos-green-dark)]">
+          <li>Interoperable with leading EVM/L2 stacks.</li>
+          <li>Sovereign-aligned design; Sharia-compliant contracts.</li>
+          <li>Merchant & treasury APIs for real-world integration.</li>
+        </ul>
       </div>
-            </section>
-   <!-- Call to Action Button -->
-          <div class="mt-8 text-left">
-           </div> 
-      </section>
+      <div class="flex justify-center">
+        <img src="GCC_minimalist_map.png" alt="GCC map highlighting KSA & UAE" class="rounded-lg shadow w-80 md:w-96" />
+      </div>
+    </div>
+  </section>
 
-<!-- Footer -->
-<footer class="text-center py-6 mt-auto"  style="background-color: #FAF7F2;">
-  <p class="text-[#DAA520]">© 2025 Bank of Sharia - Powered by <a href="https://shariacoindao.com" class="bg-[#01796F] hover:bg-[#005f4b] text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300"  target="_blank"> Sharia Coin DAO</a> </p>
-</footer>
+  <!-- Roadmap -->
+  <section id="roadmap" class="py-16 px-6">
+    <div class="container mx-auto">
+      <h2 class="text-4xl mb-6">Roadmap</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow p-6">
+          <h3 class="text-2xl mb-2">Q4 2025</h3>
+          <p class="text-sm text-neutral-700">ADGM setup, pre-seed, regulatory engagement (KSA/UAE).</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6">
+          <h3 class="text-2xl mb-2">Q1–Q2 2026</h3>
+          <p class="text-sm text-neutral-700">SAR stablecoin pilot with SAMA & partner banks; Sharia + security audits.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6">
+          <h3 class="text-2xl mb-2">Q3 2026</h3>
+          <p class="text-sm text-neutral-700">Pilot BOS Wallet & Card in KSA & UAE (5K–10K users).</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6">
+          <h3 class="text-2xl mb-2">Q4 2026</h3>
+          <p class="text-sm text-neutral-700">Scale to GCC corridors; merchant expansion.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 md:col-span-3">
+          <h3 class="text-2xl mb-2">2030</h3>
+          <p class="text-sm text-neutral-700">Own the GCC corridor with $20B+ annual flows.</p>
+        </div>
+      </div>
+      <p class="text-xs mt-3 text-neutral-600">Timeline reflects best-effort targets and is subject to regulatory approvals.</p>
+    </div>
+  </section>
 
+  <!-- About -->
+  <section id="about" class="py-16 px-6">
+    <div class="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <img src="Feature1.jpg" alt="About BOS" class="rounded-lg shadow w-80 md:w-96 mx-auto" />
+      </div>
+      <div>
+        <h2 class="text-4xl mb-4">About BOS</h2>
+        <p class="font-semibold text-[var(--bos-green-dark)] mb-4">
+          BOS is a payments infrastructure company focused on a Sharia-compliant, SAR-pegged stablecoin and the AED↔SAR corridor. Incorporated in ADGM with a regional HQ in Riyadh, we align to Vision 2030 and international standards.
+        </p>
+        <p class="text-[var(--bos-green-dark)] mb-4">
+          A community treasury and long-term rewards design (via SHARIA) may support wallet adoption and social impact—always secondary to the core, regulator-aligned payment rails.
+        </p>
+        <div class="mt-6">
+          <a href="#contact" class="bg-[var(--bos-green)] hover:bg-[var(--bos-green-dark)] text-white font-bold py-3 px-6 rounded-lg shadow">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist -->
+  <section id="waitlist" class="py-16 px-6">
+    <div class="container mx-auto bg-white rounded-2xl shadow p-8 md:p-10">
+      <h2 class="text-3xl mb-2">Join the Wallet & Card Waitlist</h2>
+      <p class="text-[var(--bos-green-dark)] mb-6">Be first to know when pilots open in KSA and the UAE.</p>
+      <form action="mailto:admin@bankofsharia.org" method="post" enctype="text/plain" class="grid md:grid-cols-3 gap-4">
+        <input aria-label="Your name" type="text" name="name" placeholder="Your name" class="border rounded-lg px-4 py-3" required />
+        <input aria-label="Your email" type="email" name="email" placeholder="Your email" class="border rounded-lg px-4 py-3" required />
+        <button class="bg-[var(--bos-green)] hover:bg-[var(--bos-green-dark)] text-white font-bold py-3 px-6 rounded-lg">Request Early Access</button>
+      </form>
+      <p class="text-xs mt-3 text-neutral-600">We will only contact you about BOS product updates and pilots.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 px-6">
+    <div class="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <img src="frontshirtprint2Small.png" alt="Contact BOS" class="rounded-lg shadow w-72 md:w-80 mx-auto" />
+      </div>
+      <div>
+        <h2 class="text-4xl mb-4"><span class="text-[var(--bos-gold)]">Contact</span></h2>
+        <p class="font-semibold text-[var(--bos-green-dark)] mb-6">
+          Partnering, investing, or piloting BOS Wallet & Card? We’d love to hear from you.
+        </p>
+        <a href="mailto:admin@bankofsharia.org" class="inline-block bg-[var(--bos-green)] text-white px-6 py-3 rounded hover:bg-[var(--bos-green-dark)]">
+          Email Us: admin@bankofsharia.org
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-8 mt-auto">
+    <p class="text-[var(--bos-gold)]">
+      © 2025 Bank of Sharia — Incorporated in ADGM, Regional HQ in Riyadh
+    </p>
+    <p class="text-sm text-neutral-600 mt-2">
+      BOS provides virtual asset transfer & settlement services. Availability depends on licensing and regulatory approvals.
+    </p>
+  </footer>
 </body>
 </html>
